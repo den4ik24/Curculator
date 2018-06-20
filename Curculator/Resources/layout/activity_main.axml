@@ -29,7 +29,7 @@
         <Button
             android:text="+/-"
             android:id="@+id/changeznak"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -38,7 +38,7 @@
         <Button
             android:text="7"
             android:id="@+id/number7"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffff6f00"
@@ -47,7 +47,7 @@
         <Button
             android:text="8"
             android:id="@+id/number8"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffe65100"
@@ -56,7 +56,7 @@
         <Button
             android:text="9"
             android:id="@+id/number9"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffff6f00"
@@ -65,7 +65,7 @@
         <Button
             android:text="+"
             android:id="@+id/operationPlus"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -74,7 +74,7 @@
         <Button
             android:text="-"
             android:id="@+id/operationMinus"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -93,7 +93,7 @@
         <Button
             android:text="%"
             android:id="@+id/percent"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -102,7 +102,7 @@
         <Button
             android:text="4"
             android:id="@+id/number4"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -112,7 +112,7 @@
         <Button
             android:text="5"
             android:id="@+id/number5"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -122,7 +122,7 @@
         <Button
             android:text="6"
             android:id="@+id/number6"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -132,7 +132,7 @@
         <Button
             android:text="*"
             android:id="@+id/operationMultiply"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -141,7 +141,7 @@
         <Button
             android:text="/"
             android:id="@+id/operationDivide"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -160,7 +160,7 @@
         <Button
             android:text="&lt;--"
             android:id="@+id/delete"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -169,7 +169,7 @@
         <Button
             android:text="1"
             android:id="@+id/number1"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -179,7 +179,7 @@
         <Button
             android:text="2"
             android:id="@+id/number2"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -189,7 +189,7 @@
         <Button
             android:text="3"
             android:id="@+id/number3"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -199,7 +199,7 @@
         <Button
             android:text="^"
             android:id="@+id/operationDegree"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -208,7 +208,7 @@
         <Button
             android:text="√"
             android:id="@+id/radical"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -228,7 +228,7 @@
         <Button
             android:text="C"
             android:id="@+id/reset"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="#ff000000"
@@ -237,7 +237,7 @@
         <Button
             android:text="0"
             android:id="@+id/number0"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -247,7 +247,7 @@
         <Button
             android:text=","
             android:id="@+id/numberComma"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -257,7 +257,7 @@
         <Button
             android:text="="
             android:id="@+id/calculateButton"
-            android:textSize="30dp"
+            android:textSize="50dp"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="#ffffffff"
