@@ -2,7 +2,7 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <SelectedDevice>Genymotion Google Nexus 7 - 5.1.0 - API 22 - 800x1280</SelectedDevice>
-    <AndroidDesignerPreferredDevice>Nexus 7</AndroidDesignerPreferredDevice>
+    <AndroidDesignerPreferredDevice>Nexus 7 2013</AndroidDesignerPreferredDevice>
     <DefaultDevice>my_device</DefaultDevice>
   </PropertyGroup>
 </Project>
