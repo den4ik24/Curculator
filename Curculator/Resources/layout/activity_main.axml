@@ -16,20 +16,22 @@
         android:textSize="60dp"
         android:textStyle="normal|bold"
         android:textAlignment="textEnd"
-        android:layout_marginBottom="20.0dp" />
+        android:singleLine="true"
+        android:freezesText="true"
+        android:layout_marginBottom="10.0dp" />
     <TableRow
         android:minWidth="45px"
         android:minHeight="45px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="20.0dp"
-        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="10.0dp"
+        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow1">
         <Button
             android:text="+/-"
             android:id="@+id/changeznak"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -38,7 +40,7 @@
         <Button
             android:text="7"
             android:id="@+id/number7"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffff6f00"
@@ -47,7 +49,7 @@
         <Button
             android:text="8"
             android:id="@+id/number8"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffe65100"
@@ -56,7 +58,7 @@
         <Button
             android:text="9"
             android:id="@+id/number9"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ffff6f00"
@@ -65,7 +67,7 @@
         <Button
             android:text="+"
             android:id="@+id/operationPlus"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -74,7 +76,7 @@
         <Button
             android:text="-"
             android:id="@+id/operationMinus"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -87,13 +89,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="20.0dp"
-        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="10.0dp"
+        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow2">
         <Button
             android:text="%"
             android:id="@+id/percent"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -102,7 +104,7 @@
         <Button
             android:text="4"
             android:id="@+id/number4"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -112,7 +114,7 @@
         <Button
             android:text="5"
             android:id="@+id/number5"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -122,7 +124,7 @@
         <Button
             android:text="6"
             android:id="@+id/number6"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -132,7 +134,7 @@
         <Button
             android:text="*"
             android:id="@+id/operationMultiply"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -141,7 +143,7 @@
         <Button
             android:text="/"
             android:id="@+id/operationDivide"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -154,13 +156,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="20.0dp"
-        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="10.0dp"
+        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow3">
         <Button
             android:text="&lt;--"
             android:id="@+id/delete"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:textColor="#ff000000"
@@ -169,7 +171,7 @@
         <Button
             android:text="1"
             android:id="@+id/number1"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -179,7 +181,7 @@
         <Button
             android:text="2"
             android:id="@+id/number2"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -189,7 +191,7 @@
         <Button
             android:text="3"
             android:id="@+id/number3"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -199,7 +201,7 @@
         <Button
             android:text="^"
             android:id="@+id/operationDegree"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff536dfe"
@@ -208,7 +210,7 @@
         <Button
             android:text="√"
             android:id="@+id/radical"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:background="#ff7c4dff"
@@ -221,14 +223,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="20.0dp"
-        android:layout_marginLeft="20.0dp"
+        android:layout_marginRight="10.0dp"
+        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow4"
-        android:layout_marginBottom="20.0dp">
+        android:layout_marginBottom="10.0dp">
         <Button
             android:text="C"
             android:id="@+id/reset"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="#ff000000"
@@ -237,7 +239,7 @@
         <Button
             android:text="0"
             android:id="@+id/number0"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -245,9 +247,9 @@
             android:layout_height="match_parent"
             android:textColor="#ffffffff" />
         <Button
-            android:text=","
+            android:text="."
             android:id="@+id/numberComma"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:shadowColor="#ff0288d1"
@@ -257,7 +259,7 @@
         <Button
             android:text="="
             android:id="@+id/calculateButton"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:layout_width="0dp"
             android:layout_weight="2"
             android:textColor="#ffffffff"

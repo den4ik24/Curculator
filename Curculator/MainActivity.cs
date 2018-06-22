@@ -6,6 +6,7 @@ using System;
 
 namespace Curculator
 {
+
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
@@ -20,8 +21,11 @@ namespace Curculator
         Button operation;
 
 
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
@@ -87,9 +91,9 @@ namespace Curculator
         private void Number_click (object sender, EventArgs e)
         {
             var button = (Button)sender;
-            if (button.Text == ",")
+            if (button.Text == ".")
             {
-                if (!textView1.Text.Contains(","))
+                if (!textView1.Text.Contains("."))
                     textView1.Text += (sender as Button).Text;
             }
             else
@@ -191,5 +195,6 @@ namespace Curculator
         }
 
     }   
+
 }
 
