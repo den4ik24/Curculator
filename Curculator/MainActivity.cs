@@ -3,14 +3,18 @@ using Android.OS;
 using Android.Support.V7.App;
 using Android.Widget;
 using System;
+using Android.Content;
+using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Curculator
 {
 
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Label = "Calculator", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        TextView textView1;
+        
+
+        TextView result;
         Button delete;
         Button radical;
         Button percent;
@@ -19,8 +23,10 @@ namespace Curculator
         Button number;
         Button changeznak;
         Button operation;
+        V7Toolbar myToolbar;
+        
 
-
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -28,8 +34,10 @@ namespace Curculator
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
+            myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
+            SetSupportActionBar(myToolbar);
 
-            textView1 = FindViewById<TextView>(Resource.Id.textView1);
+            result = FindViewById<TextView>(Resource.Id.textView1);
 
             changeznak = FindViewById<Button>(Resource.Id.changeznak);
             changeznak.Click += Changeznak_click;
@@ -83,7 +91,8 @@ namespace Curculator
             operation = FindViewById<Button>(Resource.Id.operationDegree);
             operation.Click += Operation_click;
 
-
+            
+            
         }
 
         
@@ -93,11 +102,11 @@ namespace Curculator
             var button = (Button)sender;
             if (button.Text == ".")
             {
-                if (!textView1.Text.Contains("."))
-                    textView1.Text += (sender as Button).Text;
+                if (!result.Text.Contains("."))
+                    result.Text += (sender as Button).Text;
             }
             else
-                textView1.Text += (sender as Button).Text;
+                result.Text += (sender as Button).Text;
         }
 
         double a = 0, b = 0, c = 0;
@@ -108,21 +117,28 @@ namespace Curculator
         {
             try
             {
-                a = Convert.ToDouble(textView1.Text);
+                a = Convert.ToDouble(result.Text);
                 znak = (sender as Button).Text[0];
-                textView1.Text = "";
+                result.Text = "";
             }
+
+
             catch (Exception)
             {
 
             }
+
+            
         }
 
+        
         private void CalculateButton_click (object sender, EventArgs e)
         {
+            
+            
             try
             {
-                b = Convert.ToDouble(textView1.Text);
+                b = Convert.ToDouble(result.Text);
                 switch (znak)
                 {
                     case '+':
@@ -141,7 +157,17 @@ namespace Curculator
                         c = Math.Pow(a, b);
                         break;
                 }
-                textView1.Text = c.ToString();
+                //result.Text = c.ToString();
+                result.Text = "";
+
+                var intent = new Intent(this, typeof(NewActivity));
+                intent.PutExtra("calculate", c.ToString());
+                intent.PutExtra("A", a.ToString());
+                intent.PutExtra("B", b.ToString());
+                intent.PutExtra("deistvie", znak.ToString());
+                StartActivity(intent);
+                                
+                
             }
             catch (Exception)
             {
@@ -151,47 +177,65 @@ namespace Curculator
 
         private void Radical_click (object sender, EventArgs e)
         {
+     
+
             try
             {
-                a = Convert.ToDouble(textView1.Text);
-                textView1.Text = Convert.ToString(Math.Sqrt(a));
+                a = Convert.ToDouble(result.Text);
+                result.Text = Convert.ToString(Math.Sqrt(a));
             }
             catch (Exception)
             {
 
             }
+            result.Text = "";
+
+            var intent = new Intent(this, typeof(NewActivity));
+            intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
+            intent.PutExtra("A", a.ToString());
+            intent.PutExtra("deistvie", "√");
+            StartActivity(intent);
         }
         
         private void Percent_click (object sender, EventArgs e)
         {
+            
             try
             {
-                a = Convert.ToDouble(textView1.Text);
-                textView1.Text = Convert.ToString(a / 100);
+                a = Convert.ToDouble(result.Text);
+                result.Text = Convert.ToString(a / 100);
             }
             catch (Exception)
             {
 
             }
+            result.Text = "";
+
+            var intent = new Intent(this, typeof(NewActivity));
+            intent.PutExtra("calculate", Convert.ToString(a / 100));
+            intent.PutExtra("A", a.ToString());
+            intent.PutExtra("deistvie", "%");
+            Console.WriteLine(a);
+            StartActivity(intent);
         }
 
         private void Reset_click (object sender,EventArgs e)
         {
-            textView1.Text = "";
+            result.Text = "";
         }
 
         private void Changeznak_click (object sender, EventArgs e)
         {
-            if (textView1.Text != "")
-                if (textView1.Text[0] == '-')
-                    textView1.Text = textView1.Text.Remove(0, 1);
-                else textView1.Text = '-' + textView1.Text;
+            if (result.Text != "")
+                if (result.Text[0] == '-')
+                    result.Text = result.Text.Remove(0, 1);
+                else result.Text = '-' + result.Text;
         }
 
         private void Delete_click (object sender, EventArgs e)
         {
-            if (textView1.Text != "")
-                textView1.Text = textView1.Text.Remove(textView1.Text.Length - 1, 1);
+            if (result.Text != "")
+                result.Text = result.Text.Remove(result.Text.Length - 1, 1);
         }
 
     }   
