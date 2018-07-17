@@ -1,4 +1,4 @@
 <resources>
     <string name="app_name">Curculator</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">В базу данных</string>
 </resources>

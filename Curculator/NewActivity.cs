@@ -7,7 +7,7 @@ using System;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
 using SQLite;
-
+using Android.Content;
 
 namespace Curculator
 {
@@ -29,34 +29,29 @@ namespace Curculator
             SetContentView(Resource.Layout.NewActivity);
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
+ // myToolbar.InflateMenu(Resource.Menu.menu);
             result = FindViewById<TextView>(Resource.Id.result);
             displayText = FindViewById<TextView>(Resource.Id.displayText);
 
             var intent = Intent;
             String name = intent.GetStringExtra("calculate");
 
-            String numberA = intent.GetStringExtra("A");
-            String numberB = intent.GetStringExtra("B");
-
-            String deistvie = intent.GetStringExtra("deistvie");
-
             result.Text = name;
 
-
-
+            
             var db = new SQLiteConnection(dbPath);
                 db.CreateTable<CalcModel>();
-            CalcModel dataBase = new CalcModel(name, deistvie, numberA, numberB);
+            CalcModel dataBase = new CalcModel(name);
                 db.Insert(dataBase);
                 var table = db.Table<CalcModel>();
                 foreach(var item in table)
                 {
                     
                     Console.WriteLine(displayText.Text);
-                    displayText.Text = item.Res +" = "+ item.NumberA +" "+ item.Deistvie +" "+ item.NumberB +"\n" + displayText.Text ;
+                    displayText.Text = item.Res +"\n" + displayText.Text ;
                    
                 }
-            
+                           
         }
 
 
@@ -66,15 +61,29 @@ namespace Curculator
         {
             switch (item.ItemId)
             {
+                //case Android.Resource.Id.
+               
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;
-
+                                   
                 default:
                     return base.OnOptionsItemSelected(item);
             }
         }
 
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
 
+
+            return true;
+        }
+
+        public void onToBD(IMenuItem item)
+        {
+            var intent = new Intent(this, typeof(New2Activity));
+            StartActivity(intent);
+        }
     }
 }

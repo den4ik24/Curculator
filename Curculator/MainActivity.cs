@@ -162,9 +162,6 @@ namespace Curculator
 
                 var intent = new Intent(this, typeof(NewActivity));
                 intent.PutExtra("calculate", c.ToString());
-                intent.PutExtra("A", a.ToString());
-                intent.PutExtra("B", b.ToString());
-                intent.PutExtra("deistvie", znak.ToString());
                 StartActivity(intent);
                                 
                 
@@ -192,8 +189,6 @@ namespace Curculator
 
             var intent = new Intent(this, typeof(NewActivity));
             intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
-            intent.PutExtra("A", a.ToString());
-            intent.PutExtra("deistvie", "√");
             StartActivity(intent);
         }
         
@@ -213,8 +208,6 @@ namespace Curculator
 
             var intent = new Intent(this, typeof(NewActivity));
             intent.PutExtra("calculate", Convert.ToString(a / 100));
-            intent.PutExtra("A", a.ToString());
-            intent.PutExtra("deistvie", "%");
             Console.WriteLine(a);
             StartActivity(intent);
         }

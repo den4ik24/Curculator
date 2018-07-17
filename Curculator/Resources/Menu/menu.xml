@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <!--For all properties see: http://developer.android.com/guide/topics/resources/menu-resource.html-->
+  <item android:id="@+id/toBD"
+        
+        android:title="@string/action_settings"
+        android:onClick="ToBD"
+          />
+  
+</menu>
+
+<!-- Code to implement into Activity:
+
+Android.Widget.SearchView searchView;
+public override bool OnCreateOptionsMenu(IMenu menu)
+{
+  this.MenuInflater.Inflate(Resource.Menu.menu, menu);
+
+  var searchItem = menu.FindItem(Resource.Id.action_search);
+
+  searchView = searchItem.ActionProvider.JavaCast<Android.Widget.SearchView>();
+
+  searchView.QueryTextSubmit += (sender, args) =>
+  {
+    Toast.MakeText(this, "You searched: " + args.Query, ToastLength.Short).Show();
+
+  };
+
+
+  return base.OnCreateOptionsMenu(menu);
+}
+
+-->

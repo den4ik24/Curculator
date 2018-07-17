@@ -12,7 +12,9 @@
         android:elevation="4dp"
         android:background="?android:attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        android:id="@+id/my_toolbar" />
+        android:id="@+id/my_toolbar"
+        android:minWidth="25px"
+        android:minHeight="25px" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
