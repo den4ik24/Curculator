@@ -5,6 +5,9 @@ using Android.Widget;
 using System;
 using Android.Content;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
+using System.IO;
+using SQLite;
+using Android.Views;
 
 namespace Curculator
 {
@@ -160,7 +163,7 @@ namespace Curculator
                 //result.Text = c.ToString();
                 result.Text = "";
 
-                var intent = new Intent(this, typeof(NewActivity));
+                var intent = new Intent(this, typeof(New2Activity));
                 intent.PutExtra("calculate", c.ToString());
                 StartActivity(intent);
                                 
@@ -187,7 +190,7 @@ namespace Curculator
             }
             result.Text = "";
 
-            var intent = new Intent(this, typeof(NewActivity));
+            var intent = new Intent(this, typeof(New2Activity));
             intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
             StartActivity(intent);
         }
@@ -206,7 +209,7 @@ namespace Curculator
             }
             result.Text = "";
 
-            var intent = new Intent(this, typeof(NewActivity));
+            var intent = new Intent(this, typeof(New2Activity));
             intent.PutExtra("calculate", Convert.ToString(a / 100));
             Console.WriteLine(a);
             StartActivity(intent);
@@ -231,6 +234,29 @@ namespace Curculator
                 result.Text = result.Text.Remove(result.Text.Length - 1, 1);
         }
 
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.menu, menu);
+            return true;
+        }
+
+        
+
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                               
+                case Resource.Id.toBD:
+                    var intent = new Intent(this, typeof(New2Activity));
+                    StartActivity(intent);
+                    return true;
+
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
     }   
 
 }

@@ -2579,6 +2579,9 @@ namespace Curculator
 			// aapt resource value: 0x7f0800c5
 			public const int info = 2131230917;
 			
+			// aapt resource value: 0x7f0800b5
+			public const int infoBase = 2131230901;
+			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
 			
@@ -2599,9 +2602,6 @@ namespace Curculator
 			
 			// aapt resource value: 0x7f08001d
 			public const int listMode = 2131230749;
-			
-			// aapt resource value: 0x7f0800b5
-			public const int listView1 = 2131230901;
 			
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
