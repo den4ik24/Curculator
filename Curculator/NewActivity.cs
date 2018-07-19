@@ -8,10 +8,11 @@ using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
 using SQLite;
 using Android.Content;
+using Android.Runtime;
 
 namespace Curculator
 {
-    [Activity(Label ="Result")]
+    [Activity(Label = "Result")]
 
     class NewActivity : AppCompatActivity
     {
@@ -29,7 +30,7 @@ namespace Curculator
             SetContentView(Resource.Layout.NewActivity);
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
- // myToolbar.InflateMenu(Resource.Menu.menu);
+       //  myToolbar.InflateMenu(Resource.Menu.menu);
             result = FindViewById<TextView>(Resource.Id.result);
             displayText = FindViewById<TextView>(Resource.Id.displayText);
 
@@ -38,39 +39,22 @@ namespace Curculator
 
             result.Text = name;
 
-            
+
             var db = new SQLiteConnection(dbPath);
-                db.CreateTable<CalcModel>();
+            db.CreateTable<CalcModel>();
             CalcModel dataBase = new CalcModel(name);
-                db.Insert(dataBase);
-                var table = db.Table<CalcModel>();
-                foreach(var item in table)
-                {
-                    
-                    Console.WriteLine(displayText.Text);
-                    displayText.Text = item.Res +"\n" + displayText.Text ;
-                   
-                }
-                           
-        }
-
-
-       
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
+            db.Insert(dataBase);
+            var table = db.Table<CalcModel>();
+            foreach (var item in table)
             {
-                //case Android.Resource.Id.
-               
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
-                                   
-                default:
-                    return base.OnOptionsItemSelected(item);
+
+                Console.WriteLine(displayText.Text);
+                displayText.Text = item.Res + "\n" + displayText.Text;
+
             }
+
         }
+
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -80,10 +64,28 @@ namespace Curculator
             return true;
         }
 
-        public void onToBD(IMenuItem item)
+        public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            var intent = new Intent(this, typeof(New2Activity));
-            StartActivity(intent);
+            switch (item.ItemId)
+            {
+
+                  
+                case Android.Resource.Id.Home:
+                    Finish();
+                    return true;
+
+                case Resource.Id.toBD:
+                    var intent = new Intent(this, typeof(New2Activity));
+                    StartActivity(intent);
+                    return true;
+                                        
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
         }
+
+
+
+        
     }
 }
