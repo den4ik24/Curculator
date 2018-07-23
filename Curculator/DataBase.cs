@@ -18,6 +18,10 @@
          
         }
 
+        public CalcModel(string[] name)
+        {
+        }
+
         public override string ToString()
         {
             return Res;

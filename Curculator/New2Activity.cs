@@ -31,23 +31,30 @@ namespace Curculator
             SetSupportActionBar(myToolbar);
             infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
-            var intent = Intent;
-            String name = intent.GetStringExtra("calculate");
+            SetContentView(Resource.Layout.New2Activity);
 
-            infoBase.Text = name;
+            var intent = Intent;
+            String[] name = { intent.GetStringExtra("calculate") };
+
+            
+            //infoBase.Text = name;
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Resource.Id.list_item, name);
+
+            infoBase.SetAdapter(adapter);
 
             var db = new SQLiteConnection(dbPath);
             db.CreateTable<CalcModel>();
             CalcModel dataBase = new CalcModel(name);
             db.Insert(dataBase);
             var table = db.Table<CalcModel>();
-            foreach (var item in table)
-            {
+            //foreach (var item in table)
+            //{
 
-                Console.WriteLine(infoBase.Text);
-                infoBase.Text = item.Res + "\n" + infoBase.Text;
+            //    Console.WriteLine(infoBase.Text);
+            //    infoBase.Text = item.Res + "\n" + infoBase.Text;
 
-            }
+            //}
         }
 
              public override bool OnCreateOptionsMenu(IMenu menu)
