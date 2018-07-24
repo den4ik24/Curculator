@@ -48,16 +48,16 @@ namespace Curculator
             CalcModel dataBase = new CalcModel(name);
             db.Insert(dataBase);
             var table = db.Table<CalcModel>();
-            //foreach (var item in table)
-            //{
+            /*foreach (var item in table)
+            {
 
-            //    Console.WriteLine(infoBase.Text);
-            //    infoBase.Text = item.Res + "\n" + infoBase.Text;
+                Console.WriteLine(infoBase.Text);
+                infoBase.Text = item.Res + "\n" + infoBase.Text;
 
-            //}
+            }*/
         }
 
-             public override bool OnCreateOptionsMenu(IMenu menu)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu, menu);
 
