@@ -39,22 +39,25 @@ namespace Curculator
             
             //infoBase.Text = name;
 
-            ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Resource.Id.list_item, name);
+            ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
 
-            infoBase.SetAdapter(adapter);
+            infoBase.FastScrollEnabled = true;
+            
+            //infoBase.SetAdapter(adapter);
+            infoBase.Adapter = adapter;
 
             var db = new SQLiteConnection(dbPath);
             db.CreateTable<CalcModel>();
             CalcModel dataBase = new CalcModel(name);
             db.Insert(dataBase);
             var table = db.Table<CalcModel>();
-            /*foreach (var item in table)
-            {
+        //    foreach (var item in table)
+        //    {
 
-                Console.WriteLine(infoBase.Text);
-                infoBase.Text = item.Res + "\n" + infoBase.Text;
+        //        Console.WriteLine(infoBase);
+        //        infoBase = item.Res + "\n" + infoBase;
 
-            }*/
+        //    }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
