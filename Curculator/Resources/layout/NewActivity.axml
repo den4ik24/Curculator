@@ -17,20 +17,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/result"
-        android:textSize="60dp"
+        android:textSize="70dp"
         android:textStyle="normal|bold"
         android:textAlignment="textEnd"
-        android:layout_gravity="right"
-        android:gravity="right"
         android:freezesText="true"
         android:background="@android:color/background_dark"
-        android:textColor="#ffe64a19" />
-    <TableRow
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tableRow1">
-    </TableRow>
+        android:textColor="#ffe64a19"
+        android:text="пример" />
 </LinearLayout>

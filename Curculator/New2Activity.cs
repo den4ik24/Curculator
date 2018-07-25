@@ -12,11 +12,12 @@ using Android.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
 using SQLite;
+using Android.Support.V7.App;
 
 namespace Curculator
 {
     [Activity(Label = "DataBase")]
-    class New2Activity: NewActivity
+    class New2Activity: AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3");
@@ -27,11 +28,12 @@ namespace Curculator
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.New2Activity);
+
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
-            infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
-            SetContentView(Resource.Layout.New2Activity);
+            infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
             var intent = Intent;
             String[] name = { intent.GetStringExtra("calculate") };
