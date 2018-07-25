@@ -17,11 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/result"
-        android:textSize="70dp"
+        android:textSize="60dp"
         android:textStyle="normal|bold"
         android:textAlignment="textEnd"
         android:freezesText="true"
         android:background="@android:color/background_dark"
         android:textColor="#ffe64a19"
-        android:text="пример" />
+        android:textAllCaps="false"
+        android:gravity="center" />
 </LinearLayout>

@@ -34,10 +34,10 @@ namespace Curculator
             result = FindViewById<TextView>(Resource.Id.result);
             //displayText = FindViewById<TextView>(Resource.Id.displayText);
 
-            //var intent = Intent;
-            //String name = intent.GetStringExtra("calculate");
+            var intent = Intent;
+            String name = intent.GetStringExtra("calculate");
 
-            //result.Text = name;
+            result.Text = name;
 
 
             //var db = new SQLiteConnection(dbPath);
