@@ -5,8 +5,6 @@ using Android.Views;
 using Android.Widget;
 using System;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
-using System.IO;
-using SQLite;
 using Android.Content;
 
 

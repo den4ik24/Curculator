@@ -20,7 +20,7 @@ namespace Curculator
     class New2Activity: AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
-           (System.Environment.SpecialFolder.Personal), "dataBase.db3");
+           (System.Environment.SpecialFolder.Personal), "dataBase.db3"); 
 
         V7Toolbar myToolbar;
         ListView infoBase;
@@ -44,8 +44,7 @@ namespace Curculator
             ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
 
             infoBase.FastScrollEnabled = true;
-            
-            //infoBase.SetAdapter(adapter);
+
             infoBase.Adapter = adapter;
 
             var db = new SQLiteConnection(dbPath);
@@ -53,13 +52,15 @@ namespace Curculator
             CalcModel dataBase = new CalcModel(name);
             db.Insert(dataBase);
             var table = db.Table<CalcModel>();
-        //    foreach (var item in table)
-        //    {
+              foreach (var item in table)
+              {
 
-        //        Console.WriteLine(infoBase);
-        //        infoBase = item.Res + "\n" + infoBase;
+                Console.WriteLine(infoBase);
+                infoBase = item.Res + "\n" + infoBase;
+                
+                //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
 
-        //    }
+              }
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
