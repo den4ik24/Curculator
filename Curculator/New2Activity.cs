@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
@@ -20,7 +15,7 @@ namespace Curculator
     class New2Activity: AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
-           (System.Environment.SpecialFolder.Personal), "dataBase.db3"); 
+           (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
 
         V7Toolbar myToolbar;
         ListView infoBase;
@@ -36,31 +31,30 @@ namespace Curculator
             infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
             var intent = Intent;
+
+
             String[] name = { intent.GetStringExtra("calculate") };
-
-            
             //infoBase.Text = name;
-
             ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
-
             infoBase.FastScrollEnabled = true;
-
             infoBase.Adapter = adapter;
 
-            var db = new SQLiteConnection(dbPath);
-            db.CreateTable<CalcModel>();
-            CalcModel dataBase = new CalcModel(name);
-            db.Insert(dataBase);
-            var table = db.Table<CalcModel>();
+
+            var db = new SQLiteConnection(dbPath);      //setup db connection
+            db.CreateTable<CalcModel>();                //setup a table
+            CalcModel dataBase = new CalcModel(name);   //setup a new object
+            db.Insert(dataBase);                        //store object into the table
+            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
               foreach (var item in table)
               {
-
+                CalcModel myCalcModel = new CalcModel(item.Res);//
                 Console.WriteLine(infoBase);
-                infoBase = item.Res + "\n" + infoBase;
+                infoBase = item.Res //+ "\n" + infoBase;
                 
                 //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
 
               }
+            infoBase.Adapter = adapter;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
