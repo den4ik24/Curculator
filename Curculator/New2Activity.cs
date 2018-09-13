@@ -47,10 +47,11 @@ namespace Curculator
             var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
               foreach (var item in table)
               {
-                CalcModel myCalcModel = new CalcModel(item.Res);//
+                CalcModel myCalcModel = new CalcModel(item.Res);
                 Console.WriteLine(infoBase);
-                infoBase = item.Res //+ "\n" + infoBase;
-                
+
+
+                //infoBase = item.Res + "\n" + infoBase;
                 //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
 
               }
