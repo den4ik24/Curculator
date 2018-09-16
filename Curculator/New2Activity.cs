@@ -40,22 +40,25 @@ namespace Curculator
             infoBase.Adapter = adapter;
 
 
-            var db = new SQLiteConnection(dbPath);      //setup db connection
-            db.CreateTable<CalcModel>();                //setup a table
-            CalcModel dataBase = new CalcModel(name);   //setup a new object
-            db.Insert(dataBase);                        //store object into the table
-            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
-              foreach (var item in table)
-              {
-                CalcModel myCalcModel = new CalcModel(item.Res);
-                Console.WriteLine(infoBase);
+            //var db = new SQLiteConnection(dbPath);      //setup db connection
+            //db.CreateTable<CalcModel>();                //setup a table
+            //CalcModel dataBase = new CalcModel(name);   //setup a new object
+            //db.Insert(dataBase);                        //store object into the table
+            //var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
+            //  foreach (var item in table)
+            //  {
+            //    CalcModel myCalcModel = new CalcModel(item.Res);
+            //    Console.WriteLine(infoBase);
 
 
-                //infoBase = item.Res + "\n" + infoBase;
-                //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
+            //    //infoBase = item.Res + "\n" + infoBase;
+            //    //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
 
-              }
-            infoBase.Adapter = adapter;
+            //  }
+            
+
+
+
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
