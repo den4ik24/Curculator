@@ -55,7 +55,7 @@ namespace Curculator
 
 
                     //infoBase = item.Res + "\n" + infoBase;
-                    //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
+                    
                     break;
                 }
 
