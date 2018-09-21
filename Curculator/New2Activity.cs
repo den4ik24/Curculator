@@ -22,41 +22,49 @@ namespace Curculator
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.New2Activity);
+            try
+            {
+                base.OnCreate(savedInstanceState);
+                SetContentView(Resource.Layout.New2Activity);
 
-            myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
-            SetSupportActionBar(myToolbar);
+                myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
+                SetSupportActionBar(myToolbar);
 
-            infoBase = FindViewById<ListView>(Resource.Id.infoBase);
+                infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
-            var intent = Intent;
-
-
-            String[] name = { intent.GetStringExtra("calculate") };
-            //infoBase.Text = name;
-            ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
-            infoBase.FastScrollEnabled = true;
-            infoBase.Adapter = adapter;
+                var intent = Intent;
 
 
-            //var db = new SQLiteConnection(dbPath);      //setup db connection
-            //db.CreateTable<CalcModel>();                //setup a table
-            //CalcModel dataBase = new CalcModel(name);   //setup a new object
-            //db.Insert(dataBase);                        //store object into the table
-            //var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
-            //  foreach (var item in table)
-            //  {
-            //    CalcModel myCalcModel = new CalcModel(item.Res);
-            //    Console.WriteLine(infoBase);
+                String[] name = { intent.GetStringExtra("calculate") };
+                //infoBase.Text = name;
+                ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
+                infoBase.FastScrollEnabled = true;
+                infoBase.Adapter = adapter;
 
 
-            //    //infoBase = item.Res + "\n" + infoBase;
-            //    //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
+                var db = new SQLiteConnection(dbPath);      //setup db connection
+                db.CreateTable<CalcModel>();                //setup a table
+                CalcModel dataBase = new CalcModel(name);   //setup a new object
+                db.Insert(dataBase);                        //store object into the table
+                var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
+                                                            //var stockList = db.Table<CalcModel>();
+                foreach (var item in table)
+                {
+                    CalcModel myCalcModel = new CalcModel(item.Res);
+                    Console.WriteLine(item.Res + "\n" + infoBase);
 
-            //  }
-            
 
+                    //infoBase = item.Res + "\n" + infoBase;
+                    //Ошибка CS0266  Не удается неявно преобразовать тип "string" в "Android.Widget.ListView".Существует явное преобразование(возможно, пропущено приведение типов).
+                    break;
+                }
+
+            }
+            catch (SQLiteException ex)
+            {
+                System.Diagnostics.Debug.WriteLine("SQLiteEx", ex.Message);
+              
+            }
 
 
         }

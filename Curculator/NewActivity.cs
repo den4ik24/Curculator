@@ -38,16 +38,16 @@ namespace Curculator
             result.Text = name;
 
 
-            //var db = new SQLiteConnection(dbPath);
-            //db.CreateTable<CalcModel>();
-            //CalcModel dataBase = new CalcModel(name);
-            //db.Insert(dataBase);
-            //var table = db.Table<CalcModel>();
+            //var db = new sqliteconnection(dbpath);
+            //db.createtable<calcmodel>();
+            //calcmodel database = new calcmodel(name);
+            //db.insert(database);
+            //var table = db.table<calcmodel>();
             //foreach (var item in table)
             //{
 
-            //    Console.WriteLine(displayText.Text);
-            //    displayText.Text = item.Res + "\n" + displayText.Text;
+            //    console.writeline(displaytext.text);
+            //    displaytext.text = item.res + "\n" + displaytext.text;
 
             //}
 
