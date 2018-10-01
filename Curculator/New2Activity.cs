@@ -33,8 +33,7 @@ namespace Curculator
                 infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
                 var intent = Intent;
-
-
+                
                 String[] name = { intent.GetStringExtra("calculate") };
                 //infoBase.Text = name;
                 ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
@@ -60,9 +59,9 @@ namespace Curculator
                 }
 
             }
-            catch (SQLiteException ex)
+            catch (Exception)
             {
-                System.Diagnostics.Debug.WriteLine("SQLiteEx", ex.Message);
+                //System.Diagnostics.Debug.WriteLine("SQLiteEx", ex.Message);
               
             }
 
@@ -71,10 +70,10 @@ namespace Curculator
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.menu, menu);
-
-
-            return true;
+           
+                MenuInflater.Inflate(Resource.Menu.menu, menu);
+                return true;
+           
         }
 
         public override bool OnOptionsItemSelected(IMenuItem item)

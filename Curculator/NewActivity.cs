@@ -50,12 +50,19 @@ namespace Curculator
             //    displaytext.text = item.res + "\n" + displaytext.text;
 
             //}
-
+            
         }
 
+        public void Inten(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(New2Activity));
+            intent.PutExtra("calculate", result.ToString());
+            StartActivity(intent);
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
+         
             MenuInflater.Inflate(Resource.Menu.menu, menu);
 
 
@@ -66,8 +73,7 @@ namespace Curculator
         {
             switch (item.ItemId)
             {
-
-                  
+                                  
                 case Android.Resource.Id.Home:
                     Finish();
                     return true;
@@ -79,7 +85,10 @@ namespace Curculator
                                         
                 default:
                     return base.OnOptionsItemSelected(item);
+
+
             }
+
         }
 
 
