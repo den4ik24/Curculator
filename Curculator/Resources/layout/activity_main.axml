@@ -167,7 +167,7 @@
         android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow3">
         <Button
-            android:text="&lt;--"
+            android:text="&lt;-"
             android:id="@+id/delete"
             android:textSize="40dp"
             android:layout_width="0dp"
