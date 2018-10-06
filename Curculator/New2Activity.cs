@@ -50,10 +50,7 @@ namespace Curculator
                 foreach (var item in table)
                 {
                     CalcModel myCalcModel = new CalcModel(item.Res);
-                    Console.WriteLine(item.Res + "\n" + infoBase);
-
-
-                    //infoBase = item.Res + "\n" + infoBase;
+                    Console.WriteLine(item.Res + "\n" + infoBase);                                     
                     
                     break;
                 }
