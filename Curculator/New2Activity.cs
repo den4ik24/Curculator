@@ -52,7 +52,7 @@ namespace Curculator
                     CalcModel myCalcModel = new CalcModel(item.Res);
                     Console.WriteLine(item.Res + "\n" + infoBase);                                     
                     
-                    break;
+                   
                 }
 
             }

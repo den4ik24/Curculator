@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/circle">
+    >
     <android.support.v7.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
@@ -25,15 +25,13 @@
         android:textAlignment="textEnd"
         android:singleLine="true"
         android:freezesText="true"
-        android:layout_marginBottom="10.0dp" />
+ />
     <TableRow
         android:minWidth="45px"
         android:minHeight="45px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="10.0dp"
-        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow1">
         <Button
             android:text="+/-"
@@ -96,8 +94,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="10.0dp"
-        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow2">
         <Button
             android:text="%"
@@ -163,8 +159,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="10.0dp"
-        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow3">
         <Button
             android:text="&lt;-"
@@ -230,10 +224,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:layout_marginRight="10.0dp"
-        android:layout_marginLeft="10.0dp"
         android:id="@+id/tableRow4"
-        android:layout_marginBottom="10.0dp">
+>
         <Button
             android:text="C"
             android:id="@+id/reset"

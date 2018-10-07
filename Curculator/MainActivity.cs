@@ -232,12 +232,12 @@ namespace Curculator
                 result.Text = result.Text.Remove(result.Text.Length - 1, 1);
         }
 
-        //public void Inten(object sender, EventArgs e)
-        //{
-        //    var intent = new Intent(this, typeof(New2Activity));
-        //    intent.PutExtra("calculate", result.ToString());
-        //    StartActivity(intent);
-        //}
+        public void Inten(object sender, EventArgs e)
+        {
+            var intent = new Intent(this, typeof(New2Activity));
+            intent.PutExtra("calculate", result.ToString());
+            StartActivity(intent);
+        }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
