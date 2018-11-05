@@ -15,13 +15,9 @@ namespace Curculator
     class NewActivity : AppCompatActivity
     {
 
-        //string dbPath = Path.Combine(System.Environment.GetFolderPath
-        //    (System.Environment.SpecialFolder.Personal), "dataBase.db3");
-
         TextView result;
         V7Toolbar myToolbar;
-        //TextView displayText;
-
+       
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -37,29 +33,10 @@ namespace Curculator
 
             result.Text = name;
 
-
-            //var db = new sqliteconnection(dbpath);
-            //db.createtable<calcmodel>();
-            //calcmodel database = new calcmodel(name);
-            //db.insert(database);
-            //var table = db.table<calcmodel>();
-            //foreach (var item in table)
-            //{
-
-            //    console.writeline(displaytext.text);
-            //    displaytext.text = item.res + "\n" + displaytext.text;
-
-            //}
-            
+                   
         }
 
-        //public void Inten(object sender, EventArgs e)
-        //{
-        //    var intent = new Intent(this, typeof(New2Activity));
-        //    intent.PutExtra("calculate", result.ToString());
-        //    StartActivity(intent);
-        //}
-
+        
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
          
@@ -80,6 +57,7 @@ namespace Curculator
 
                 case Resource.Id.toBD:
                     var intent = new Intent(this, typeof(New2Activity));
+                    intent.PutExtra("calculate", result.Text);
                     StartActivity(intent);
                     return true;
                                         
@@ -91,8 +69,6 @@ namespace Curculator
 
         }
 
-
-
-        
+                       
     }
 }

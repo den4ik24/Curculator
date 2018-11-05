@@ -8,6 +8,7 @@ using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using System.IO;
 using SQLite;
 using Android.Support.V7.App;
+using System.Linq;
 
 namespace Curculator
 {
@@ -33,33 +34,35 @@ namespace Curculator
                 infoBase = FindViewById<ListView>(Resource.Id.infoBase);
 
                 var intent = Intent;
+               
                 
-                String[] name = { intent.GetStringExtra("calculate") };
-                //infoBase.Text = name;
-                ArrayAdapter<String> adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, name);
+                //1. получаем GetStringExtra
+
+                String name = intent.GetStringExtra("calculate");
+                
+                
+                //2. добавляем в БД
+
+                var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
+                //db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
+                //CalcModel dataBase = new CalcModel(name);   //setup a new object \устанавливаем новый объект\
+                //db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
+                var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
+               
+              
+                
+                //3. вывод на экран
+                
+                ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
                 infoBase.FastScrollEnabled = true;
                 infoBase.Adapter = adapter;
 
 
-                var db = new SQLiteConnection(dbPath);      //setup db connection
-                db.CreateTable<CalcModel>();                //setup a table
-                CalcModel dataBase = new CalcModel(name);   //setup a new object
-                db.Insert(dataBase);                        //store object into the table
-                var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want
-                                                            //var stockList = db.Table<CalcModel>();
-                foreach (var item in table)
-                {
-                    CalcModel myCalcModel = new CalcModel(item.Res);
-                    Console.WriteLine(item.Res + "\n" + infoBase);                                     
-                    
-                   
-                }
-
+   
             }
             catch (Exception)
             {
-                //System.Diagnostics.Debug.WriteLine("SQLiteEx", ex.Message);
-              
+               
             }
 
 

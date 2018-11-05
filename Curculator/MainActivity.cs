@@ -6,6 +6,9 @@ using System;
 using Android.Content;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Views;
+using SQLite;
+using System.IO;
+using System.Linq;
 
 namespace Curculator
 {
@@ -25,13 +28,15 @@ namespace Curculator
         Button changeznak;
         Button operation;
         V7Toolbar myToolbar;
-        
 
-        
+        string dbPath = Path.Combine(System.Environment.GetFolderPath
+           (System.Environment.SpecialFolder.Personal), "dataBase.db3");
+
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+
 
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -92,8 +97,19 @@ namespace Curculator
             operation = FindViewById<Button>(Resource.Id.operationDegree);
             operation.Click += Operation_click;
 
+
+
+            var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
+            db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
+            CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
+            db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
+            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
+
             
-            
+
+            var intent = new Intent(this, typeof(New2Activity));
+            intent.PutExtra("calculate", result.Text);
+            StartActivity(intent);
         }
 
         
@@ -158,7 +174,7 @@ namespace Curculator
                         c = Math.Pow(a, b);
                         break;
                 }
-                //result.Text = c.ToString();
+                
                 result.Text = "";
 
                 var intent = new Intent(this, typeof(NewActivity));
@@ -255,6 +271,7 @@ namespace Curculator
                                
                 case Resource.Id.toBD:
                     var intent = new Intent(this, typeof(New2Activity));
+                    intent.PutExtra("calculate", result.Text);
                     StartActivity(intent);
                     return true;
 
