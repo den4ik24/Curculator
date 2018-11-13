@@ -6,7 +6,8 @@ using Android.Widget;
 using System;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Content;
-
+using SQLite;
+using System.IO;
 
 namespace Curculator
 {
@@ -14,6 +15,8 @@ namespace Curculator
 
     class NewActivity : AppCompatActivity
     {
+        string dbPath = Path.Combine(System.Environment.GetFolderPath
+           (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
 
         TextView result;
         V7Toolbar myToolbar;
@@ -26,13 +29,13 @@ namespace Curculator
             SetSupportActionBar(myToolbar);
 
             result = FindViewById<TextView>(Resource.Id.result);
-            //displayText = FindViewById<TextView>(Resource.Id.displayText);
-
+           
             var intent = Intent;
             String name = intent.GetStringExtra("calculate");
 
             result.Text = name;
 
+            Res();
                    
         }
 
@@ -69,6 +72,15 @@ namespace Curculator
 
         }
 
-                       
+        public void Res()
+        {
+            var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
+            db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
+            CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
+            db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
+            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
+
+        }
+
     }
 }

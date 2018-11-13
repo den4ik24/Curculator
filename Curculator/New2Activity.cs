@@ -9,6 +9,7 @@ using System.IO;
 using SQLite;
 using Android.Support.V7.App;
 using System.Linq;
+using Android.Content;
 
 namespace Curculator
 {
@@ -32,43 +33,53 @@ namespace Curculator
                 SetSupportActionBar(myToolbar);
 
                 infoBase = FindViewById<ListView>(Resource.Id.infoBase);
-
+                                
                 var intent = Intent;
-               
-                
+
+                infoBase.ItemClick += InfoBase_ItemClick;
+
                 //1. получаем GetStringExtra
 
                 String name = intent.GetStringExtra("calculate");
-                
-                
+
+
                 //2. добавляем в БД
 
                 var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
                 //db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
-                CalcModel dataBase = new CalcModel(name);   //setup a new object \устанавливаем новый объект\
+                //CalcModel dataBase = new CalcModel(name);   //setup a new object \устанавливаем новый объект\
                 //db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
                 var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
-               
-              
-                
+
+
+
                 //3. вывод на экран
-                
+
                 ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
                 infoBase.FastScrollEnabled = true;
                 infoBase.Adapter = adapter;
 
-
-   
+                
             }
             catch (Exception)
             {
                
             }
 
-
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+
+        private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
+            var intent = new Intent(this, typeof(NewActivity));
+
+
+
+
+            StartActivity(intent);
+        }
+
+    public override bool OnCreateOptionsMenu(IMenu menu)
         {
            
                 MenuInflater.Inflate(Resource.Menu.menu, menu);
