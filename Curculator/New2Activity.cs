@@ -16,6 +16,7 @@ namespace Curculator
     [Activity(Label = "DataBase")]
     class New2Activity: AppCompatActivity
     {
+        string name;
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
 
@@ -40,7 +41,7 @@ namespace Curculator
 
                 //1. получаем GetStringExtra
 
-                String name = intent.GetStringExtra("calculate");
+                name = intent.GetStringExtra("calculate");
 
 
                 //2. добавляем в БД
@@ -72,10 +73,7 @@ namespace Curculator
         private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
             var intent = new Intent(this, typeof(NewActivity));
-
-
-
-
+            intent.PutExtra("calculate", name );
             StartActivity(intent);
         }
 

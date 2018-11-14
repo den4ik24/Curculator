@@ -36,7 +36,7 @@ namespace Curculator
             result.Text = name;
 
             Res();
-                   
+               
         }
 
         
@@ -81,6 +81,13 @@ namespace Curculator
             var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
 
         }
+
+        //public void Result()
+        //{
+        //    var intent = Intent;
+        //    String name = intent.GetStringExtra("result");
+        //    result.Text = name;
+        //}
 
     }
 }
