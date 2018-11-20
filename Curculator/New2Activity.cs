@@ -37,7 +37,9 @@ namespace Curculator
                                 
                 var intent = Intent;
 
-                infoBase.ItemClick += InfoBase_ItemClick;
+                //infoBase.ItemClick += InfoBase_ItemClick;
+
+
 
                 //1. получаем GetStringExtra
 
@@ -59,8 +61,8 @@ namespace Curculator
                 ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
                 infoBase.FastScrollEnabled = true;
                 infoBase.Adapter = adapter;
+                Console.WriteLine("записываем в Таблицу результвтов ");
 
-                
             }
             catch (Exception)
             {
@@ -70,12 +72,12 @@ namespace Curculator
         }
 
 
-        private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        {
-            var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("calculate", name );
-            StartActivity(intent);
-        }
+        //private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        //{
+        //    var intent = new Intent(this, typeof(NewActivity));
+        //    intent.PutExtra("calculate", name );
+        //    StartActivity(intent);
+        //}
 
     public override bool OnCreateOptionsMenu(IMenu menu)
         {

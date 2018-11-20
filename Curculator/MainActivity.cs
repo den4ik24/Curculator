@@ -109,6 +109,7 @@ namespace Curculator
             {
                 if (!result.Text.Contains("."))
                     result.Text += (sender as Button).Text;
+                Console.WriteLine("Введены цифры");
             }
             else
                 result.Text += (sender as Button).Text;
@@ -125,6 +126,7 @@ namespace Curculator
                 a = Convert.ToDouble(result.Text);
                 znak = (sender as Button).Text[0];
                 result.Text = "";
+                
             }
 
 
@@ -161,8 +163,9 @@ namespace Curculator
                     case '^':
                         c = Math.Pow(a, b);
                         break;
+
                 }
-                
+                Console.WriteLine("введен знак");
                 result.Text = "";
 
                 var intent = new Intent(this, typeof(NewActivity));
@@ -185,6 +188,7 @@ namespace Curculator
             {
                 a = Convert.ToDouble(result.Text);
                 result.Text = Convert.ToString(Math.Sqrt(a));
+                Console.WriteLine("введен корень");
             }
             catch (Exception)
             {
@@ -204,6 +208,7 @@ namespace Curculator
             {
                 a = Convert.ToDouble(result.Text);
                 result.Text = Convert.ToString(a / 100);
+                Console.WriteLine("введен процент");
             }
             catch (Exception)
             {
@@ -220,6 +225,7 @@ namespace Curculator
         private void Reset_click (object sender,EventArgs e)
         {
             result.Text = "";
+            Console.WriteLine("введен сброс");
         }
 
         private void Changeznak_click (object sender, EventArgs e)
@@ -228,12 +234,14 @@ namespace Curculator
                 if (result.Text[0] == '-')
                     result.Text = result.Text.Remove(0, 1);
                 else result.Text = '-' + result.Text;
+            Console.WriteLine("введен другой знак");
         }
 
         private void Delete_click (object sender, EventArgs e)
         {
             if (result.Text != "")
                 result.Text = result.Text.Remove(result.Text.Length - 1, 1);
+            Console.WriteLine("введено удаление ");
         }
 
         public void Inten(object sender, EventArgs e)
@@ -248,6 +256,7 @@ namespace Curculator
 
             MenuInflater.Inflate(Resource.Menu.menu, menu);
             return true;
+
         }
 
         
@@ -265,7 +274,9 @@ namespace Curculator
 
                 default:
                     return base.OnOptionsItemSelected(item);
+
             }
+
         }
 
         

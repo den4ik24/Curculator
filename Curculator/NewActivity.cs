@@ -79,15 +79,9 @@ namespace Curculator
             CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
             db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
             var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
-
+            Console.WriteLine("отправляем результат в БД ");
         }
 
-        //public void Result()
-        //{
-        //    var intent = Intent;
-        //    String name = intent.GetStringExtra("result");
-        //    result.Text = name;
-        //}
-
+      
     }
 }
