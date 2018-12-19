@@ -35,7 +35,7 @@ namespace Curculator
 
             result.Text = name;
 
-            Res();
+           // Res();
                
         }
 
@@ -72,15 +72,15 @@ namespace Curculator
 
         }
 
-        public void Res()
-        {
-            var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
-            db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
-            CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
-            db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
-            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
-            Console.WriteLine("отправляем результат в БД ");
-        }
+        //public void Res()
+        //{
+        //    var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
+        //    db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
+        //    CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
+        //    db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
+        //    var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
+        //    Console.WriteLine(" отправляем результат в БД ");
+        //}
 
       
     }

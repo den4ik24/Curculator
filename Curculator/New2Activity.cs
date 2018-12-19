@@ -10,13 +10,15 @@ using SQLite;
 using Android.Support.V7.App;
 using System.Linq;
 using Android.Content;
+using System.Collections;
 
 namespace Curculator
 {
-    [Activity(Label = "DataBase")]
+    [Activity(Label = "База")]
     class New2Activity: AppCompatActivity
     {
-        string name;
+        //string name;
+                
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
 
@@ -37,13 +39,13 @@ namespace Curculator
                                 
                 var intent = Intent;
 
-                //infoBase.ItemClick += InfoBase_ItemClick;
+                infoBase.ItemClick += InfoBase_ItemClick;
 
 
 
                 //1. получаем GetStringExtra
 
-                name = intent.GetStringExtra("calculate");
+                //name = intent.GetStringExtra("calculate");
 
 
                 //2. добавляем в БД
@@ -61,7 +63,7 @@ namespace Curculator
                 ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
                 infoBase.FastScrollEnabled = true;
                 infoBase.Adapter = adapter;
-                Console.WriteLine("записываем в Таблицу результвтов ");
+                Console.WriteLine(" записываем в Таблицу результвтов ");
 
             }
             catch (Exception)
@@ -72,14 +74,15 @@ namespace Curculator
         }
 
 
-        //private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
-        //{
-        //    var intent = new Intent(this, typeof(NewActivity));
-        //    intent.PutExtra("calculate", name );
-        //    StartActivity(intent);
-        //}
+        private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
+        {
 
-    public override bool OnCreateOptionsMenu(IMenu menu)
+            var intent = new Intent(this, typeof(NewActivity));
+            intent.PutExtra("calculate", infoBase.SelectedItemPosition);
+            StartActivity(intent);
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
            
                 MenuInflater.Inflate(Resource.Menu.menu, menu);

@@ -109,7 +109,7 @@ namespace Curculator
             {
                 if (!result.Text.Contains("."))
                     result.Text += (sender as Button).Text;
-                Console.WriteLine("Введены цифры");
+                Console.WriteLine(" Введены цифры ");
             }
             else
                 result.Text += (sender as Button).Text;
@@ -165,14 +165,14 @@ namespace Curculator
                         break;
 
                 }
-                Console.WriteLine("введен знак");
+                Console.WriteLine(" введен знак ");
                 result.Text = "";
 
                 var intent = new Intent(this, typeof(NewActivity));
                 intent.PutExtra("calculate", c.ToString());
                 StartActivity(intent);
-                                
-                
+                result.Text = c.ToString();
+                Res();
             }
             catch (Exception)
             {
@@ -188,7 +188,7 @@ namespace Curculator
             {
                 a = Convert.ToDouble(result.Text);
                 result.Text = Convert.ToString(Math.Sqrt(a));
-                Console.WriteLine("введен корень");
+                Console.WriteLine(" введен корень ");
             }
             catch (Exception)
             {
@@ -199,6 +199,9 @@ namespace Curculator
             var intent = new Intent(this, typeof(NewActivity));
             intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
             StartActivity(intent);
+
+            result.Text = Convert.ToString(Math.Sqrt(a));
+            Res();
         }
         
         private void Percent_click (object sender, EventArgs e)
@@ -208,7 +211,7 @@ namespace Curculator
             {
                 a = Convert.ToDouble(result.Text);
                 result.Text = Convert.ToString(a / 100);
-                Console.WriteLine("введен процент");
+                Console.WriteLine(" введен процент ");
             }
             catch (Exception)
             {
@@ -220,12 +223,15 @@ namespace Curculator
             intent.PutExtra("calculate", Convert.ToString(a / 100));
             Console.WriteLine(a);
             StartActivity(intent);
+
+            result.Text = Convert.ToString(a / 100);
+            Res();
         }
 
         private void Reset_click (object sender,EventArgs e)
         {
             result.Text = "";
-            Console.WriteLine("введен сброс");
+            Console.WriteLine(" введен сброс ");
         }
 
         private void Changeznak_click (object sender, EventArgs e)
@@ -234,22 +240,24 @@ namespace Curculator
                 if (result.Text[0] == '-')
                     result.Text = result.Text.Remove(0, 1);
                 else result.Text = '-' + result.Text;
-            Console.WriteLine("введен другой знак");
+            Console.WriteLine(" введена смена знака ");
         }
 
         private void Delete_click (object sender, EventArgs e)
         {
             if (result.Text != "")
                 result.Text = result.Text.Remove(result.Text.Length - 1, 1);
-            Console.WriteLine("введено удаление ");
+            Console.WriteLine(" введено удаление ");
         }
 
-        public void Inten(object sender, EventArgs e)
-        {
-            var intent = new Intent(this, typeof(New2Activity));
-            intent.PutExtra("calculate", result.ToString());
-            StartActivity(intent);
-        }
+        //public void Inten(object sender, EventArgs e)
+        //{
+        //    var intent = new Intent(this, typeof(New2Activity));
+        //    intent.PutExtra("calculate", result.ToString());
+        //    StartActivity(intent);
+             
+        //    Res();
+        //}
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
@@ -279,7 +287,15 @@ namespace Curculator
 
         }
 
-        
+        public void Res()
+        {
+            var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
+            db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
+            CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
+            db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
+            var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
+            Console.WriteLine(" отправляем результат в БД ");
+        }
 
     }   
 
