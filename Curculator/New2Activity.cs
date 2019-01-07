@@ -78,7 +78,7 @@ namespace Curculator
         {
 
             var intent = new Intent(this, typeof(NewActivity));
-            intent.PutExtra("calculate", infoBase.SelectedItemPosition);
+            intent.PutExtra("calculate", infoBase.GetItemAtPosition(e.Position).ToString());
             StartActivity(intent);
         }
 
