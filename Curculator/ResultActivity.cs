@@ -6,14 +6,13 @@ using Android.Widget;
 using System;
 using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Content;
-using SQLite;
 using System.IO;
 
 namespace Curculator
 {
     [Activity(Label = "Result")]
 
-    class NewActivity : AppCompatActivity
+    class ResultActivity : AppCompatActivity
     {
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
@@ -24,7 +23,7 @@ namespace Curculator
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.NewActivity);
+            SetContentView(Resource.Layout.Result);
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
 
@@ -59,7 +58,7 @@ namespace Curculator
                     return true;
 
                 case Resource.Id.toBD:
-                    var intent = new Intent(this, typeof(New2Activity));
+                    var intent = new Intent(this, typeof(DataBaseActivity));
                     intent.PutExtra("calculate", result.Text);
                     StartActivity(intent);
                     return true;

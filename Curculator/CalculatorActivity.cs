@@ -8,13 +8,12 @@ using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Views;
 using SQLite;
 using System.IO;
-using System.Linq;
 
 namespace Curculator
 {
 
     [Activity(Label = "Calculator", Theme = "@style/AppTheme", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    public class CalculatorActivity : AppCompatActivity
     {
         
 
@@ -39,7 +38,7 @@ namespace Curculator
 
 
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.Calculator);
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
 
@@ -168,7 +167,7 @@ namespace Curculator
                 Console.WriteLine(" введен знак ");
                 result.Text = "";
 
-                var intent = new Intent(this, typeof(NewActivity));
+                var intent = new Intent(this, typeof(ResultActivity));
                 intent.PutExtra("calculate", c.ToString());
                 StartActivity(intent);
                 result.Text = c.ToString();
@@ -196,7 +195,7 @@ namespace Curculator
             }
             result.Text = "";
 
-            var intent = new Intent(this, typeof(NewActivity));
+            var intent = new Intent(this, typeof(ResultActivity));
             intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
             StartActivity(intent);
 
@@ -219,7 +218,7 @@ namespace Curculator
             }
             result.Text = "";
 
-            var intent = new Intent(this, typeof(NewActivity));
+            var intent = new Intent(this, typeof(ResultActivity));
             intent.PutExtra("calculate", Convert.ToString(a / 100));
             Console.WriteLine(a);
             StartActivity(intent);
@@ -275,7 +274,7 @@ namespace Curculator
             {
                                
                 case Resource.Id.toBD:
-                    var intent = new Intent(this, typeof(New2Activity));
+                    var intent = new Intent(this, typeof(DataBaseActivity));
                     intent.PutExtra("calculate", result.Text);
                     StartActivity(intent);
                     return true;

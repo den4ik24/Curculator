@@ -57,10 +57,10 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase.cs" />
-    <Compile Include="MainActivity.cs" />
-    <Compile Include="New2Activity.cs" />
-    <Compile Include="NewActivity.cs" />
+    <Compile Include="DataBaseСonstructor.cs" />
+    <Compile Include="CalculatorActivity.cs" />
+    <Compile Include="DataBaseActivity.cs" />
+    <Compile Include="ResultActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -72,7 +72,7 @@
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\activity_main.axml">
+    <AndroidResource Include="Resources\layout\Calculator.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\values\colors.xml" />
@@ -104,12 +104,12 @@
     <PackageReference Include="Xamarin.Android.Support.Design" Version="28.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\NewActivity.axml">
+    <AndroidResource Include="Resources\layout\Result.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\New2Activity.axml">
+    <AndroidResource Include="Resources\layout\DataBase.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
