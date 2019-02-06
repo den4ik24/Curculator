@@ -3074,17 +3074,17 @@ namespace Curculator
 			// aapt resource value: 0x7f090069
 			public const int action_bar_title = 2131296361;
 			
-			// aapt resource value: 0x7f0900c6
-			public const int action_container = 2131296454;
+			// aapt resource value: 0x7f0900c7
+			public const int action_container = 2131296455;
 			
 			// aapt resource value: 0x7f09008e
 			public const int action_context_bar = 2131296398;
 			
-			// aapt resource value: 0x7f0900d1
-			public const int action_divider = 2131296465;
+			// aapt resource value: 0x7f0900d2
+			public const int action_divider = 2131296466;
 			
-			// aapt resource value: 0x7f0900c7
-			public const int action_image = 2131296455;
+			// aapt resource value: 0x7f0900c8
+			public const int action_image = 2131296456;
 			
 			// aapt resource value: 0x7f090003
 			public const int action_menu_divider = 2131296259;
@@ -3101,11 +3101,11 @@ namespace Curculator
 			// aapt resource value: 0x7f09006b
 			public const int action_mode_close_button = 2131296363;
 			
-			// aapt resource value: 0x7f0900c8
-			public const int action_text = 2131296456;
+			// aapt resource value: 0x7f0900c9
+			public const int action_text = 2131296457;
 			
-			// aapt resource value: 0x7f0900d2
-			public const int actions = 2131296466;
+			// aapt resource value: 0x7f0900d3
+			public const int actions = 2131296467;
 			
 			// aapt resource value: 0x7f09006c
 			public const int activity_chooser_view_content = 2131296364;
@@ -3158,8 +3158,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090086
 			public const int checkbox = 2131296390;
 			
-			// aapt resource value: 0x7f0900d0
-			public const int chronometer = 2131296464;
+			// aapt resource value: 0x7f0900d1
+			public const int chronometer = 2131296465;
 			
 			// aapt resource value: 0x7f090061
 			public const int clip_horizontal = 2131296353;
@@ -3170,8 +3170,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090040
 			public const int collapseActionView = 2131296320;
 			
-			// aapt resource value: 0x7f0900bc
-			public const int container = 2131296444;
+			// aapt resource value: 0x7f0900bd
+			public const int container = 2131296445;
 			
 			// aapt resource value: 0x7f090082
 			public const int content = 2131296386;
@@ -3179,8 +3179,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090075
 			public const int contentPanel = 2131296373;
 			
-			// aapt resource value: 0x7f0900bd
-			public const int coordinator = 2131296445;
+			// aapt resource value: 0x7f0900be
+			public const int coordinator = 2131296446;
 			
 			// aapt resource value: 0x7f09007c
 			public const int custom = 2131296380;
@@ -3197,20 +3197,20 @@ namespace Curculator
 			// aapt resource value: 0x7f0900ae
 			public const int delete = 2131296430;
 			
-			// aapt resource value: 0x7f0900bf
-			public const int design_bottom_sheet = 2131296447;
+			// aapt resource value: 0x7f0900c0
+			public const int design_bottom_sheet = 2131296448;
+			
+			// aapt resource value: 0x7f0900c5
+			public const int design_menu_item_action_area = 2131296453;
 			
 			// aapt resource value: 0x7f0900c4
-			public const int design_menu_item_action_area = 2131296452;
+			public const int design_menu_item_action_area_stub = 2131296452;
 			
 			// aapt resource value: 0x7f0900c3
-			public const int design_menu_item_action_area_stub = 2131296451;
+			public const int design_menu_item_text = 2131296451;
 			
 			// aapt resource value: 0x7f0900c2
-			public const int design_menu_item_text = 2131296450;
-			
-			// aapt resource value: 0x7f0900c1
-			public const int design_navigation_view = 2131296449;
+			public const int design_navigation_view = 2131296450;
 			
 			// aapt resource value: 0x7f090027
 			public const int disableHome = 2131296295;
@@ -3269,8 +3269,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090071
 			public const int icon = 2131296369;
 			
-			// aapt resource value: 0x7f0900d3
-			public const int icon_group = 2131296467;
+			// aapt resource value: 0x7f0900d4
+			public const int icon_group = 2131296468;
 			
 			// aapt resource value: 0x7f090041
 			public const int ifRoom = 2131296321;
@@ -3278,11 +3278,11 @@ namespace Curculator
 			// aapt resource value: 0x7f09006e
 			public const int image = 2131296366;
 			
-			// aapt resource value: 0x7f0900cc
-			public const int info = 2131296460;
+			// aapt resource value: 0x7f0900cd
+			public const int info = 2131296461;
 			
-			// aapt resource value: 0x7f0900b9
-			public const int infoBase = 2131296441;
+			// aapt resource value: 0x7f0900ba
+			public const int infoBase = 2131296442;
 			
 			// aapt resource value: 0x7f090068
 			public const int italic = 2131296360;
@@ -3293,8 +3293,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09004e
 			public const int labeled = 2131296334;
 			
-			// aapt resource value: 0x7f0900bb
-			public const int largeLabel = 2131296443;
+			// aapt resource value: 0x7f0900bc
+			public const int largeLabel = 2131296444;
 			
 			// aapt resource value: 0x7f090054
 			public const int left = 2131296340;
@@ -3311,8 +3311,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090070
 			public const int list_item = 2131296368;
 			
-			// aapt resource value: 0x7f0900d6
-			public const int masked = 2131296470;
+			// aapt resource value: 0x7f0900d7
+			public const int masked = 2131296471;
 			
 			// aapt resource value: 0x7f09009c
 			public const int message = 2131296412;
@@ -3332,11 +3332,14 @@ namespace Curculator
 			// aapt resource value: 0x7f09002f
 			public const int multiply = 2131296303;
 			
+			// aapt resource value: 0x7f0900b9
+			public const int my_layout = 2131296441;
+			
 			// aapt resource value: 0x7f09009d
 			public const int my_toolbar = 2131296413;
 			
-			// aapt resource value: 0x7f0900c0
-			public const int navigation_header_container = 2131296448;
+			// aapt resource value: 0x7f0900c1
+			public const int navigation_header_container = 2131296449;
 			
 			// aapt resource value: 0x7f090042
 			public const int never = 2131296322;
@@ -3347,14 +3350,14 @@ namespace Curculator
 			// aapt resource value: 0x7f090025
 			public const int normal = 2131296293;
 			
-			// aapt resource value: 0x7f0900ce
-			public const int notification_background = 2131296462;
+			// aapt resource value: 0x7f0900cf
+			public const int notification_background = 2131296463;
+			
+			// aapt resource value: 0x7f0900cb
+			public const int notification_main_column = 2131296459;
 			
 			// aapt resource value: 0x7f0900ca
-			public const int notification_main_column = 2131296458;
-			
-			// aapt resource value: 0x7f0900c9
-			public const int notification_main_column_container = 2131296457;
+			public const int notification_main_column_container = 2131296458;
 			
 			// aapt resource value: 0x7f0900b6
 			public const int number0 = 2131296438;
@@ -3437,17 +3440,17 @@ namespace Curculator
 			// aapt resource value: 0x7f0900b5
 			public const int reset = 2131296437;
 			
-			// aapt resource value: 0x7f0900d4
-			public const int result = 2131296468;
+			// aapt resource value: 0x7f0900d5
+			public const int result = 2131296469;
 			
 			// aapt resource value: 0x7f090055
 			public const int right = 2131296341;
 			
-			// aapt resource value: 0x7f0900cd
-			public const int right_icon = 2131296461;
+			// aapt resource value: 0x7f0900ce
+			public const int right_icon = 2131296462;
 			
-			// aapt resource value: 0x7f0900cb
-			public const int right_side = 2131296459;
+			// aapt resource value: 0x7f0900cc
+			public const int right_side = 2131296460;
 			
 			// aapt resource value: 0x7f09000c
 			public const int save_image_matrix = 2131296268;
@@ -3524,8 +3527,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09002c
 			public const int showTitle = 2131296300;
 			
-			// aapt resource value: 0x7f0900ba
-			public const int smallLabel = 2131296442;
+			// aapt resource value: 0x7f0900bb
+			public const int smallLabel = 2131296443;
 			
 			// aapt resource value: 0x7f090016
 			public const int snackbar_action = 2131296278;
@@ -3608,8 +3611,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09009e
 			public const int textView1 = 2131296414;
 			
-			// aapt resource value: 0x7f0900c5
-			public const int text_input_password_toggle = 2131296453;
+			// aapt resource value: 0x7f0900c6
+			public const int text_input_password_toggle = 2131296454;
 			
 			// aapt resource value: 0x7f090018
 			public const int textinput_counter = 2131296280;
@@ -3620,8 +3623,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09001a
 			public const int textinput_helper_text = 2131296282;
 			
-			// aapt resource value: 0x7f0900cf
-			public const int time = 2131296463;
+			// aapt resource value: 0x7f0900d0
+			public const int time = 2131296464;
 			
 			// aapt resource value: 0x7f090023
 			public const int title = 2131296291;
@@ -3632,8 +3635,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09007e
 			public const int title_template = 2131296382;
 			
-			// aapt resource value: 0x7f0900d7
-			public const int toBD = 2131296471;
+			// aapt resource value: 0x7f0900d8
+			public const int toBD = 2131296472;
 			
 			// aapt resource value: 0x7f090045
 			public const int top = 2131296325;
@@ -3641,8 +3644,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09007d
 			public const int topPanel = 2131296381;
 			
-			// aapt resource value: 0x7f0900be
-			public const int touch_outside = 2131296446;
+			// aapt resource value: 0x7f0900bf
+			public const int touch_outside = 2131296447;
 			
 			// aapt resource value: 0x7f09000f
 			public const int transition_current_scene = 2131296271;
@@ -3674,8 +3677,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09001b
 			public const int view_offset_helper = 2131296283;
 			
-			// aapt resource value: 0x7f0900d5
-			public const int visible = 2131296469;
+			// aapt resource value: 0x7f0900d6
+			public const int visible = 2131296470;
 			
 			// aapt resource value: 0x7f090043
 			public const int withText = 2131296323;

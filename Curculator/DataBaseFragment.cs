@@ -11,29 +11,30 @@ using Android.Content;
 
 namespace Curculator
 {
-    [Activity(Label = "База")]
-    class DataBaseActivity: AppCompatActivity
+    //[Activity(Label = "База")]
+    class DataBaseFragment: Fragment
     {
                        
         string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3"); //path to the database file
 
-        V7Toolbar myToolbar;
+        //V7Toolbar myToolbar;
         ListView infoBase;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            try
-            {
-                base.OnCreate(savedInstanceState);
-                SetContentView(Resource.Layout.DataBase);
+            
+                //base.OnActivityCreated(savedInstanceState);
+                //SetContentView(Resource.Layout.Calculator);
 
-                myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
-                SetSupportActionBar(myToolbar);
+                //myToolbar = Activity.FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
+                //SetSupportActionBar(myToolbar);
 
-                infoBase = FindViewById<ListView>(Resource.Id.infoBase);
+            View view = inflater.Inflate(Resource.Layout.DataBase, container, false);
+
+                infoBase = view.FindViewById<ListView>(Resource.Id.infoBase);
                                 
-                var intent = Intent;
+                var intent = new Intent();
 
                 infoBase.ItemClick += InfoBase_ItemClick;
 
@@ -56,16 +57,12 @@ namespace Curculator
 
                 //3. вывод на экран
 
-                ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(this, Android.Resource.Layout.SimpleListItem1, table.ToList());
+                ArrayAdapter<CalcModel> adapter = new ArrayAdapter<CalcModel>(Activity, Android.Resource.Layout.SimpleListItem1, table.ToList());
                 infoBase.FastScrollEnabled = true;
                 infoBase.Adapter = adapter;
                 Console.WriteLine(" записываем в Таблицу результвтов ");
 
-            }
-            catch (Exception)
-            {
-               
-            }
+            return view;
 
         }
 
@@ -73,33 +70,37 @@ namespace Curculator
         private void InfoBase_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
 
-            var intent = new Intent(this, typeof(ResultActivity));
+            var intent = new Intent();
+            intent.SetClass(Activity, typeof(ResultFragment));
             intent.PutExtra("calculate", infoBase.GetItemAtPosition(e.Position).ToString());
-            StartActivity(intent);
+            FragmentTransaction transcation = FragmentManager.BeginTransaction();
+            transcation.Add(Resource.Id.my_layout, new ResultFragment());
+            transcation.Commit();
+            //seeFragments.Visibility = ViewStates.Visible;
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
-        {
+        //public override bool OnCreateOptionsMenu(IMenu menu)
+        //{
            
-                MenuInflater.Inflate(Resource.Menu.menu, menu);
-                return true;
+        //        MenuInflater.Inflate(Resource.Menu.menu, menu);
+        //        return true;
            
-        }
+        //}
 
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            switch (item.ItemId)
-            {
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    switch (item.ItemId)
+        //    {
 
 
-                case Android.Resource.Id.Home:
-                    Finish();
-                    return true;
+        //        case Android.Resource.Id.Home:
+        //            Finish();
+        //            return true;
 
-                default:
-                    return base.OnOptionsItemSelected(item);
-            }
-        }
+        //        default:
+        //            return base.OnOptionsItemSelected(item);
+        //    }
+        //}
 
 
     }

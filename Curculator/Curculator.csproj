@@ -59,8 +59,8 @@
   <ItemGroup>
     <Compile Include="DataBaseСonstructor.cs" />
     <Compile Include="CalculatorActivity.cs" />
-    <Compile Include="DataBaseActivity.cs" />
-    <Compile Include="ResultActivity.cs" />
+    <Compile Include="DataBaseFragment.cs" />
+    <Compile Include="ResultFragment.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

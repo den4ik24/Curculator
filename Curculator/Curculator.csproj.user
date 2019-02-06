@@ -3,7 +3,7 @@
   <PropertyGroup>
     <SelectedDevice>Live Player</SelectedDevice>
     <AndroidDesignerPreferredDevice>Nexus 7 2013</AndroidDesignerPreferredDevice>
-    <DefaultDevice>my_device</DefaultDevice>
+    <DefaultDevice>Nexus_5X_API_25</DefaultDevice>
     <AndroidDesignerPreferredTheme>AppTheme</AndroidDesignerPreferredTheme>
   </PropertyGroup>
 </Project>

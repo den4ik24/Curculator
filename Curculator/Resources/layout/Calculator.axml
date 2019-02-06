@@ -6,8 +6,8 @@
 	android:orientation="vertical"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	tools:menu="menu"
-    >
+	tools:menu="menu"  >
+	
 	<android.support.v7.widget.Toolbar
 		android:layout_width="match_parent"
 		android:layout_height="?android:attr/actionBarSize"
@@ -15,6 +15,7 @@
 		android:background="?android:attr/colorPrimary"
 		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 		android:id="@+id/my_toolbar" />
+	
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -26,8 +27,7 @@
 		android:textStyle="normal|bold"
 		android:textAlignment="textEnd"
 		android:singleLine="true"
-		android:freezesText="true"
- />
+		android:freezesText="true" />
 	<TableRow
 		android:minWidth="45px"
 		android:minHeight="45px"
@@ -267,4 +267,10 @@
 			android:background="#ff004d40"
 			android:layout_height="match_parent" />
 	</TableRow>
+		<LinearLayout 
+        android:orientation="vertical"
+		android:visibility = "gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:id="@+id/my_layout" />
 </LinearLayout>
