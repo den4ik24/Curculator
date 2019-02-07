@@ -15,6 +15,13 @@
 		android:background="?android:attr/colorPrimary"
 		android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 		android:id="@+id/my_toolbar" />
+	<LinearLayout 
+        android:orientation="vertical"
+		android:visibility = "gone"
+		android:layout_width="match_parent"
+        android:layout_height="match_parent"
+		android:id="@+id/my_layout" 
+	/>
 	
 	<TextView
 		android:layout_width="match_parent"
@@ -267,10 +274,5 @@
 			android:background="#ff004d40"
 			android:layout_height="match_parent" />
 	</TableRow>
-		<LinearLayout 
-        android:orientation="vertical"
-		android:visibility = "gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-		android:id="@+id/my_layout" />
+		
 </LinearLayout>

@@ -3140,8 +3140,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090072
 			public const int buttonPanel = 2131296370;
 			
-			// aapt resource value: 0x7f0900b8
-			public const int calculateButton = 2131296440;
+			// aapt resource value: 0x7f0900b9
+			public const int calculateButton = 2131296441;
 			
 			// aapt resource value: 0x7f09004c
 			public const int center = 2131296332;
@@ -3152,8 +3152,8 @@ namespace Curculator
 			// aapt resource value: 0x7f090052
 			public const int center_vertical = 2131296338;
 			
-			// aapt resource value: 0x7f0900a0
-			public const int changeznak = 2131296416;
+			// aapt resource value: 0x7f0900a1
+			public const int changeznak = 2131296417;
 			
 			// aapt resource value: 0x7f090086
 			public const int checkbox = 2131296390;
@@ -3194,8 +3194,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09006f
 			public const int default_activity_button = 2131296367;
 			
-			// aapt resource value: 0x7f0900ae
-			public const int delete = 2131296430;
+			// aapt resource value: 0x7f0900af
+			public const int delete = 2131296431;
 			
 			// aapt resource value: 0x7f0900c0
 			public const int design_bottom_sheet = 2131296448;
@@ -3332,8 +3332,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09002f
 			public const int multiply = 2131296303;
 			
-			// aapt resource value: 0x7f0900b9
-			public const int my_layout = 2131296441;
+			// aapt resource value: 0x7f09009e
+			public const int my_layout = 2131296414;
 			
 			// aapt resource value: 0x7f09009d
 			public const int my_toolbar = 2131296413;
@@ -3359,53 +3359,53 @@ namespace Curculator
 			// aapt resource value: 0x7f0900ca
 			public const int notification_main_column_container = 2131296458;
 			
-			// aapt resource value: 0x7f0900b6
-			public const int number0 = 2131296438;
-			
-			// aapt resource value: 0x7f0900af
-			public const int number1 = 2131296431;
+			// aapt resource value: 0x7f0900b7
+			public const int number0 = 2131296439;
 			
 			// aapt resource value: 0x7f0900b0
-			public const int number2 = 2131296432;
+			public const int number1 = 2131296432;
 			
 			// aapt resource value: 0x7f0900b1
-			public const int number3 = 2131296433;
-			
-			// aapt resource value: 0x7f0900a8
-			public const int number4 = 2131296424;
-			
-			// aapt resource value: 0x7f0900a9
-			public const int number5 = 2131296425;
-			
-			// aapt resource value: 0x7f0900aa
-			public const int number6 = 2131296426;
-			
-			// aapt resource value: 0x7f0900a1
-			public const int number7 = 2131296417;
-			
-			// aapt resource value: 0x7f0900a2
-			public const int number8 = 2131296418;
-			
-			// aapt resource value: 0x7f0900a3
-			public const int number9 = 2131296419;
-			
-			// aapt resource value: 0x7f0900b7
-			public const int numberComma = 2131296439;
+			public const int number2 = 2131296433;
 			
 			// aapt resource value: 0x7f0900b2
-			public const int operationDegree = 2131296434;
+			public const int number3 = 2131296434;
 			
-			// aapt resource value: 0x7f0900ac
-			public const int operationDivide = 2131296428;
+			// aapt resource value: 0x7f0900a9
+			public const int number4 = 2131296425;
 			
-			// aapt resource value: 0x7f0900a5
-			public const int operationMinus = 2131296421;
+			// aapt resource value: 0x7f0900aa
+			public const int number5 = 2131296426;
 			
 			// aapt resource value: 0x7f0900ab
-			public const int operationMultiply = 2131296427;
+			public const int number6 = 2131296427;
+			
+			// aapt resource value: 0x7f0900a2
+			public const int number7 = 2131296418;
+			
+			// aapt resource value: 0x7f0900a3
+			public const int number8 = 2131296419;
 			
 			// aapt resource value: 0x7f0900a4
-			public const int operationPlus = 2131296420;
+			public const int number9 = 2131296420;
+			
+			// aapt resource value: 0x7f0900b8
+			public const int numberComma = 2131296440;
+			
+			// aapt resource value: 0x7f0900b3
+			public const int operationDegree = 2131296435;
+			
+			// aapt resource value: 0x7f0900ad
+			public const int operationDivide = 2131296429;
+			
+			// aapt resource value: 0x7f0900a6
+			public const int operationMinus = 2131296422;
+			
+			// aapt resource value: 0x7f0900ac
+			public const int operationMultiply = 2131296428;
+			
+			// aapt resource value: 0x7f0900a5
+			public const int operationPlus = 2131296421;
 			
 			// aapt resource value: 0x7f090060
 			public const int outline = 2131296352;
@@ -3419,8 +3419,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09000b
 			public const int parent_matrix = 2131296267;
 			
-			// aapt resource value: 0x7f0900a7
-			public const int percent = 2131296423;
+			// aapt resource value: 0x7f0900a8
+			public const int percent = 2131296424;
 			
 			// aapt resource value: 0x7f090058
 			public const int pin = 2131296344;
@@ -3431,14 +3431,14 @@ namespace Curculator
 			// aapt resource value: 0x7f090007
 			public const int progress_horizontal = 2131296263;
 			
-			// aapt resource value: 0x7f0900b3
-			public const int radical = 2131296435;
+			// aapt resource value: 0x7f0900b4
+			public const int radical = 2131296436;
 			
 			// aapt resource value: 0x7f090087
 			public const int radio = 2131296391;
 			
-			// aapt resource value: 0x7f0900b5
-			public const int reset = 2131296437;
+			// aapt resource value: 0x7f0900b6
+			public const int reset = 2131296438;
 			
 			// aapt resource value: 0x7f0900d5
 			public const int result = 2131296469;
@@ -3572,17 +3572,17 @@ namespace Curculator
 			// aapt resource value: 0x7f090026
 			public const int tabMode = 2131296294;
 			
-			// aapt resource value: 0x7f09009f
-			public const int tableRow1 = 2131296415;
+			// aapt resource value: 0x7f0900a0
+			public const int tableRow1 = 2131296416;
 			
-			// aapt resource value: 0x7f0900a6
-			public const int tableRow2 = 2131296422;
+			// aapt resource value: 0x7f0900a7
+			public const int tableRow2 = 2131296423;
 			
-			// aapt resource value: 0x7f0900ad
-			public const int tableRow3 = 2131296429;
+			// aapt resource value: 0x7f0900ae
+			public const int tableRow3 = 2131296430;
 			
-			// aapt resource value: 0x7f0900b4
-			public const int tableRow4 = 2131296436;
+			// aapt resource value: 0x7f0900b5
+			public const int tableRow4 = 2131296437;
 			
 			// aapt resource value: 0x7f09001e
 			public const int tag_transition_group = 2131296286;
@@ -3608,8 +3608,8 @@ namespace Curculator
 			// aapt resource value: 0x7f09005a
 			public const int textStart = 2131296346;
 			
-			// aapt resource value: 0x7f09009e
-			public const int textView1 = 2131296414;
+			// aapt resource value: 0x7f09009f
+			public const int textView1 = 2131296415;
 			
 			// aapt resource value: 0x7f0900c6
 			public const int text_input_password_toggle = 2131296454;
@@ -3637,6 +3637,12 @@ namespace Curculator
 			
 			// aapt resource value: 0x7f0900d8
 			public const int toBD = 2131296472;
+			
+			// aapt resource value: 0x7f0900da
+			public const int toCalculator = 2131296474;
+			
+			// aapt resource value: 0x7f0900d9
+			public const int toResult = 2131296473;
 			
 			// aapt resource value: 0x7f090045
 			public const int top = 2131296325;
@@ -4120,6 +4126,12 @@ namespace Curculator
 			
 			// aapt resource value: 0x7f0c001a
 			public const int abc_toolbar_collapse_description = 2131492890;
+			
+			// aapt resource value: 0x7f0c0039
+			public const int action_calculator = 2131492921;
+			
+			// aapt resource value: 0x7f0c0038
+			public const int action_result = 2131492920;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int action_settings = 2131492919;

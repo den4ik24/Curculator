@@ -9,6 +9,7 @@ using SQLite;
 using Android.Support.V7.App;
 using Android.Content;
 
+
 namespace Curculator
 {
     //[Activity(Label = "База")]

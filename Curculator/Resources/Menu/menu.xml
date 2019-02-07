@@ -5,7 +5,12 @@
   <item android:id="@+id/toBD"
         android:title="@string/action_settings"
 />
-      
+  <item android:id="@+id/toResult"
+    android:title="@string/action_result"
+/>
+  <item android:id="@+id/toCalculator"
+        android:title="@string/action_calculator"
+/>
 </menu>
 
 <!-- Code to implement into Activity:

@@ -145,8 +145,8 @@ namespace Curculator
         
         private void CalculateButton_click (object sender, EventArgs e)
         {
-            
-            
+                       
+
             try
             {
                 b = Convert.ToDouble(result.Text);
@@ -176,8 +176,9 @@ namespace Curculator
                 intent.PutExtra("calculate", c.ToString());
                 //StartActivity(intent);
                 result.Text = c.ToString();
-                Res();
                 ShowResultFragment();
+                Res();
+                
             }
             catch (Exception)
             {
@@ -206,8 +207,9 @@ namespace Curculator
             //StartActivity(intent);
 
             result.Text = Convert.ToString(Math.Sqrt(a));
-            Res();
             ShowResultFragment();
+            Res();
+            
         }
         
         private void Percent_click (object sender, EventArgs e)
@@ -231,8 +233,9 @@ namespace Curculator
             //StartActivity(intent);
                                     
             result.Text = Convert.ToString(a / 100);
-            Res();
             ShowResultFragment();
+            Res();
+            
         }
 
         private void Reset_click (object sender,EventArgs e)
@@ -278,7 +281,8 @@ namespace Curculator
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-            
+            FragmentTransaction transaction;
+
             switch (item.ItemId)
             {
 
@@ -286,10 +290,35 @@ namespace Curculator
                     var intent = new Intent(this, typeof(DataBaseFragment));
                     intent.PutExtra("calculate", result.Text);
                     seeFragments.Visibility = ViewStates.Visible;
-                    FragmentTransaction transcation = FragmentManager.BeginTransaction();
-                    transcation.Add(Resource.Id.my_layout, new DataBaseFragment());
-                    transcation.Commit();
+                    transaction = FragmentManager.BeginTransaction();
+                    transaction.Replace(Resource.Id.my_layout, new DataBaseFragment());
+                    transaction.AddToBackStack(null);
+                    //transaction.Add(Resource.Id.my_layout, new DataBaseFragment());
+                    transaction.Commit();
                     
+                    return true;
+
+                case Resource.Id.toResult:
+                    intent = new Intent(this, typeof(ResultFragment));
+                    intent.PutExtra("calculate", result.Text);
+                    seeFragments.Visibility = ViewStates.Visible;
+                    transaction = FragmentManager.BeginTransaction();
+                    transaction.Replace(Resource.Id.my_layout, new ResultFragment());
+                    transaction.AddToBackStack(null);
+                    //transaction.Add(Resource.Id.my_layout, new ResultFragment());
+                    transaction.Commit();
+
+                    return true;
+
+                case Resource.Id.toCalculator:
+                    intent = new Intent(this, typeof(CalculatorActivity));
+                    intent.PutExtra("calculate", result.Text);
+                    seeFragments.Visibility = ViewStates.Gone;
+                    
+                    //transaction = FragmentManager.BeginTransaction();
+                    //transaction.Add(Resource.Id.my_layout, new CalculatorActivity());
+                    //transaction.Commit();
+
                     return true;
 
                 default:
@@ -315,10 +344,11 @@ namespace Curculator
 
         public void ShowResultFragment()
         {
+            seeFragments.Visibility = ViewStates.Visible;
             FragmentTransaction transcation = FragmentManager.BeginTransaction();
             transcation.Add(Resource.Id.my_layout, new ResultFragment());
             transcation.Commit();
-            seeFragments.Visibility = ViewStates.Visible;
+            
         }
 
 
