@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Curculator</string>
-    <string name="action_settings">В базу данных</string>
-  <string name="action_result">В результаты</string>
-  <string name="action_calculator">В калькулятор</string>
+
+    <string name="action_settings">База данных</string>
+  <string name="action_result">Результаты</string>
+  <string name="action_calculator">Калькулятор</string>
 </resources>

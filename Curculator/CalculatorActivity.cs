@@ -1,15 +1,13 @@
-﻿using Android.App;
+﻿using System;
+using System.IO;
+using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Support.V7.App;
-using Android.Widget;
-using System;
-using Android.Content;
-using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 using Android.Views;
+using Android.Widget;
 using SQLite;
-using System.IO;
-using Android.Runtime;
-
+using V7Toolbar = Android.Support.V7.Widget.Toolbar;
 
 namespace Curculator
 {
@@ -17,7 +15,6 @@ namespace Curculator
     [Activity(Label = "Calculator", Theme = "@style/AppTheme", MainLauncher = true)]
     public class CalculatorActivity : AppCompatActivity
     {
-
         LinearLayout seeFragments;
         TextView result;
         Button delete;
@@ -29,21 +26,18 @@ namespace Curculator
         Button changeznak;
         Button operation;
         V7Toolbar myToolbar;
-
-        string dbPath = Path.Combine(System.Environment.GetFolderPath
+        readonly string dbPath = Path.Combine(System.Environment.GetFolderPath
            (System.Environment.SpecialFolder.Personal), "dataBase.db3");
-
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             System.Threading.Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
 
-
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Calculator);
             myToolbar = FindViewById<V7Toolbar>(Resource.Id.my_toolbar);
             SetSupportActionBar(myToolbar);
-
+            
             seeFragments = FindViewById<LinearLayout>(Resource.Id.my_layout);
             //seeFragments.Visibility = ViewStates.Visible;
 
@@ -100,11 +94,7 @@ namespace Curculator
             operation.Click += Operation_click;
             operation = FindViewById<Button>(Resource.Id.operationDegree);
             operation.Click += Operation_click;
-
-
         }
-
-        
 
         private void Number_click (object sender, EventArgs e)
         {
@@ -130,23 +120,15 @@ namespace Curculator
                 a = Convert.ToDouble(result.Text);
                 znak = (sender as Button).Text[0];
                 result.Text = "";
-                
             }
-
-
             catch (Exception)
             {
 
             }
-
-            
         }
-
         
         private void CalculateButton_click (object sender, EventArgs e)
         {
-                       
-
             try
             {
                 b = Convert.ToDouble(result.Text);
@@ -167,18 +149,15 @@ namespace Curculator
                     case '^':
                         c = Math.Pow(a, b);
                         break;
-
                 }
                 Console.WriteLine(" введен знак ");
                 result.Text = "";
-
                 var intent = new Intent(this, typeof(ResultFragment));
                 intent.PutExtra("calculate", c.ToString());
                 //StartActivity(intent);
                 result.Text = c.ToString();
                 ShowResultFragment();
-                Res();
-                
+                Res(); 
             }
             catch (Exception)
             {
@@ -188,8 +167,6 @@ namespace Curculator
 
         private void Radical_click (object sender, EventArgs e)
         {
-     
-
             try
             {
                 a = Convert.ToDouble(result.Text);
@@ -205,16 +182,13 @@ namespace Curculator
             var intent = new Intent(this, typeof(ResultFragment));
             intent.PutExtra("calculate", Convert.ToString(Math.Sqrt(a)));
             //StartActivity(intent);
-
             result.Text = Convert.ToString(Math.Sqrt(a));
             ShowResultFragment();
             Res();
-            
         }
         
         private void Percent_click (object sender, EventArgs e)
         {
-            
             try
             {
                 a = Convert.ToDouble(result.Text);
@@ -226,16 +200,13 @@ namespace Curculator
 
             }
             result.Text = "";
-
             var intent = new Intent(this, typeof(ResultFragment));
             intent.PutExtra("calculate", Convert.ToString(a / 100));
             Console.WriteLine(a);
             //StartActivity(intent);
-                                    
             result.Text = Convert.ToString(a / 100);
             ShowResultFragment();
             Res();
-            
         }
 
         private void Reset_click (object sender,EventArgs e)
@@ -271,21 +242,15 @@ namespace Curculator
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-
             MenuInflater.Inflate(Resource.Menu.menu, menu);
             return true;
-
         }
-
-
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             FragmentTransaction transaction;
-
             switch (item.ItemId)
             {
-
                 case Resource.Id.toBD:
                     var intent = new Intent(this, typeof(DataBaseFragment));
                     intent.PutExtra("calculate", result.Text);
@@ -314,31 +279,22 @@ namespace Curculator
                     intent = new Intent(this, typeof(CalculatorActivity));
                     intent.PutExtra("calculate", result.Text);
                     seeFragments.Visibility = ViewStates.Gone;
-                    
                     //transaction = FragmentManager.BeginTransaction();
                     //transaction.Add(Resource.Id.my_layout, new CalculatorActivity());
                     //transaction.Commit();
-
                     return true;
 
                 default:
                     return base.OnOptionsItemSelected(item);
-
-
-            }
-
-            
-            
+            } 
         }
         public void Res()
         {
-            
             var db = new SQLiteConnection(dbPath);      //setup db connection \устанавливаем соединение\
             db.CreateTable<CalcModel>();                //setup a table \устанавливаем таблицу\
             CalcModel dataBase = new CalcModel(result.Text);   //setup a new object \устанавливаем новый объект\
             db.Insert(dataBase);                        //store object into the table \сохраняем объект в таблицу\
             var table = db.Table<CalcModel>();          //connect to the table, that contains the data we want \соединяем таблицу, которая содержит нужную нам информацию\
-            
             Console.WriteLine(" отправляем результат в БД ");
         }
 
@@ -348,11 +304,7 @@ namespace Curculator
             FragmentTransaction transcation = FragmentManager.BeginTransaction();
             transcation.Add(Resource.Id.my_layout, new ResultFragment());
             transcation.Commit();
-            
         }
-
-
-
         //private void loadFragment(Fragment fragment)
         //{
         //    // create a FragmentManager
